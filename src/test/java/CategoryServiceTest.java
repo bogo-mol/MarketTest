@@ -26,6 +26,8 @@ public class CategoryServiceTest {
             assertThat(response.isSuccessful(), equalTo(true));
             assertThat(response.body().getId(), equalTo(2));
             assertThat(response.body().getTitle(), equalTo("Electronic"));
+            response.body().getProducts().forEach(product ->
+                    assertThat(product.getCategoryTitle(), equalTo("Electronic")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
