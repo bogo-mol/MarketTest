@@ -20,6 +20,12 @@ public class ProductServiceTest {
     }
 
     @Test
+    void createProduct() {
+
+
+    }
+
+    @Test
     void getProductTest() throws IOException {
 
         Response<ResponseBody> response = productService.getProduct().execute();

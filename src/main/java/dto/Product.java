@@ -1,9 +1,13 @@
 package dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
+import lombok.*;
 
-@Data
+
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@With
 public class Product {
 
     @JsonProperty
