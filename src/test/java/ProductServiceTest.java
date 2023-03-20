@@ -20,13 +20,17 @@ public class ProductServiceTest {
     }
 
     @Test
-    void getProductTest() {
-        try {
-            Response<ResponseBody> response= productService.getProduct().execute();
+    void getProductTest() throws IOException {
 
-            assertThat(response.isSuccessful(), equalTo(true));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Response<ResponseBody> response = productService.getProduct().execute();
+
+        assertThat(response.isSuccessful(), equalTo(true));
+    }
+
+    @Test
+    void deleteProductTest() throws IOException {
+        Response<ResponseBody> response = productService.deleteProduct(3).execute();
+
+        assertThat(response.isSuccessful(), equalTo(true));
     }
 }
